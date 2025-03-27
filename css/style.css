@@ -179,3 +179,21 @@ main{
     border-radius: 4px;
     transition: background-color 0.3s;
   }
+
+  .edit-btn {
+    color: #f39c12;
+    border: 1px solid  #f39c12;
+  }
+  
+  .edit-btn:hover {
+    background-color: rgba(52, 152, 219, 0.1);
+  }
+  
+  .delete-btn {
+    color: #f39c12;
+    border: 1px solid  #f39c12;
+  }
+  
+  .delete-btn:hover {
+    background-color: rgba(231, 76, 60, 0.1);
+  }
