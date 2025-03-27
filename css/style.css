@@ -5,6 +5,14 @@
 }
 
 body{
-    background-color:salmon;
+    background-color:cornflowerblue;
     line-height: 1.6;
+}
+
+header{
+    background-color:salmon;
+    color: black;
+    text-align: center;
+    padding: 2rem 0;
+    margin-bottom: 2rem;
 }
