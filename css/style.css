@@ -5,12 +5,12 @@
 }
 
 body{
-    background-color:cornflowerblue;
+    background-color:salmon;
     line-height: 1.6;
 }
 
 header{
-    background-color:salmon;
+    background-color:cornflowerblue;
     color: black;
     text-align: center;
     padding: 2rem 0;
@@ -47,4 +47,12 @@ main{
     flex-grow: 1;
     min-width: 200px;
     font-size: 1rem;
+}
+
+#genre-filter{
+    padding: 0.5rem;
+    border: 2px solid orangered;
+    border-radius: 6px;
+    font-size: 1rem;
+    background-color:cornflowerblue;
 }
