@@ -8,13 +8,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeBtn = document.querySelector('.close-btn');
     const movieForm = document.getElementById('movie-form');
     const modalTitle = document.getElementById('modal-title');
-    
-    // Form fields
     const movieIdField = document.getElementById('movie-id');
     const titleField = document.getElementById('title');
     const directorField = document.getElementById('director');
     const yearField = document.getElementById('year');
     const genreField = document.getElementById('genre');
     const ratingField = document.getElementById('rating');
-        const posterField = document.getElementById('poster');
+    const posterField = document.getElementById('poster');
+
+    const API_URL='http://localhost:3000/movies'
+
+
     });
