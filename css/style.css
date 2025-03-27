@@ -109,3 +109,15 @@ main{
     display: flex;
     flex-direction: column;
   }
+
+  .movie-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  .movie-poster {
+    height: 400px;
+    background-color: #ddd;
+    background-size: cover;
+    background-position: center;
+  }
