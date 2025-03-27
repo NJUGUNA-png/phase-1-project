@@ -54,5 +54,18 @@ main{
     border: 2px solid orangered;
     border-radius: 6px;
     font-size: 1rem;
-    background-color:cornflowerblue;
+    background-color:darkslategrey;
+    color: beige;
 }
+
+#search-btn{
+    background-color:darkslategrey;
+    color:beige;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition:background-color 0.3s;
+    font-size: 1rem;
+}
+
