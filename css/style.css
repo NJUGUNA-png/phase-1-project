@@ -31,3 +31,12 @@ main{
     flex-wrap: wrap;
     gap: 1rem;
 }
+
+.search-filter{
+    display: flex;
+    flex-grow: 1;
+    max-width: 800px;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
