@@ -16,3 +16,9 @@ header{
     padding: 2rem 0;
     margin-bottom: 2rem;
 }
+
+main{
+    max-width: 1200px;
+    margin: 0 auto 2rem;
+    padding: 0 1rem;
+}
