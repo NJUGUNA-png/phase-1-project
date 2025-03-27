@@ -121,3 +121,21 @@ main{
     background-size: cover;
     background-position: center;
   }
+
+  .movie-info {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .movie-info h3 {
+    margin-bottom: 0.5rem;
+    color:brown;
+    font-size: 1.3rem;
+  }
+  
+  .movie-info p {
+    margin-bottom: 0.3rem;
+    color:brown;
+  }
