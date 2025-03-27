@@ -18,5 +18,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const API_URL='http://localhost:3000/movies'
 
+    let isEditMode = false;
+
+    async function fetchMovies() {
+        try {
+            const response = await fetch(API_URL);
+            const movies = await response.json();
+            displayMovies(movies);
+        } catch (error) {
+            console.error('Error fetching movies:', error);
+        }
+    }
+
 
     });
