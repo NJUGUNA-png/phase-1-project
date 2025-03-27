@@ -1,3 +1,5 @@
+This project is live @ https://njuguna-png.github.io/phase-1-project/
+
 TopChoice is a web application that allows users to manage their personal movie collection. Users can add, edit, delete, and search through their movies with ease. The application features a clean, responsive interface and provides filtering options by genre.
 
 Features
