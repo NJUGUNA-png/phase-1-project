@@ -6,7 +6,7 @@
     <title>TopChoice</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="images/movie.webp">
-    <script src="js/script.js" defer></script>
+    <script src="js/script.js"></script>
 </head>
 <body>
     <header>
@@ -40,6 +40,44 @@
             <div id="movies-container"></div>
 
         </section>
+
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <h2 id="modal-title">Add New Movie</h2>
+                <form id="movie-form">
+                    <input type="hidden" id="movie-id">
+                    <div class="form-group">
+                        <label for="title">Title:</label>
+                        <input type="text" id="title" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="director">Director:</label>
+                        <input type="text" id="director" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="year">Year:</label>
+                        <input type="text" id="year" min="2000" max="2025" required>
+
+                    </div>
+                    <div class="form-group">
+                        <label for="genre">Genre:</label>
+                        <select id="genre required">
+                            <option value="">Select Genre</option>
+                            <option value="Action">Action</option>
+                            <option value="Comedy">Comedy</option>
+                            <option value="Drama">Drama</option>
+                            <option value="Sci-Fi">Sci-Fi</option>
+                            <option value="Horror">Horror</option>
+                            <option value="Thriller">Thriller</option>
+                        </select>
+
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
     </main>
 </body>
 </html>
