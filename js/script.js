@@ -97,5 +97,137 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
     
+    function openAddMovieModal() {
+        isEditMode = false;
+        modalTitle.textContent = 'Add New Movie';
+        movieForm.reset();
+        movieIdField.value = '';
+        modal.style.display = 'block';
+    }
     
+    function openEditMovieModal(movie) {
+        isEditMode = true;
+        modalTitle.textContent = 'Edit Movie';
+        movieIdField.value = movie.id;
+        titleField.value = movie.title;
+        directorField.value = movie.director;
+        yearField.value = movie.year;
+        genreField.value = movie.genre;
+        ratingField.value = movie.rating || '';
+        posterField.value = movie.poster || '';
+        modal.style.display = 'block';
+    }
+    
+    function closeModal() {
+        modal.style.display = 'none';
+    }
+    
+    async function editMovie(movieId) {
+        try {
+            const response = await fetch(`${API_URL}/${movieId}`);
+            const movie = await response.json();
+            openEditMovieModal(movie);
+        } catch (error) {
+            console.error('Error fetching movie for edit:', error);
+            alert('Failed to fetch movie details. Please try again.');
+        }
+    }
+    
+    async function deleteMovie(movieId) {
+        if (confirm('Are you sure you want to delete this movie?')) {
+            try {
+                await fetch(`${API_URL}/${movieId}`, {
+                    method: 'DELETE'
+                });
+                fetchMovies();
+                alert('Movie deleted successfully!');
+            } catch (error) {
+                console.error('Error deleting movie:', error);
+                alert('Failed to delete movie. Please try again.');
+            }
+        }
+    }
+    
+    async function handleFormSubmit(e) {
+        e.preventDefault();
+        
+        
+        if (!titleField.value || !directorField.value || !yearField.value || !genreField.value) {
+            alert('Please fill in all required fields.');
+            return;
+        }
+        
+        const movieData = {
+            title: titleField.value,
+            director: directorField.value,
+            year: yearField.value,
+            genre: genreField.value,
+            rating: ratingField.value ? parseFloat(ratingField.value) : null,
+            poster: posterField.value || null
+        };
+        
+        try {
+            if (isEditMode) {
+            
+                await fetch(`${API_URL}/${movieIdField.value}`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(movieData)
+                });
+                alert('Movie updated successfully!');
+            } else {
+                
+                await fetch(API_URL, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(movieData)
+                });
+                alert('Movie added successfully!');
+            }
+            
+            closeModal();
+            fetchMovies();
+        } catch (error) {
+            console.error('Error saving movie:', error);
+            alert('Failed to save movie. Please try again.');
+        }
+    }
+    
+    async function filterMovies() {
+        const searchTerm = searchInput.value.trim().toLowerCase();
+        const genre = genreFilter.value;
+        
+        try {
+            const response = await fetch(API_URL);
+            let movies = await response.json();
+            
+            
+            if (searchTerm) {
+                movies = movies.filter(movie => 
+                    movie.title.toLowerCase().includes(searchTerm) || 
+                    movie.director.toLowerCase().includes(searchTerm)
+                );
+            }
+            
+            if (genre) {
+                movies = movies.filter(movie => movie.genre === genre);
+            }
+            
+            displayMovies(movies);
+        } catch (error) {
+            console.error('Error filtering movies:', error);
+            alert('Failed to filter movies. Please try again.');
+        }
+    }
+    
+    
+    window.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            closeModal();
+        }
+    });
 });
