@@ -30,5 +30,20 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    function displayMovies(movies) {
+        moviesContainer.innerHTML = '';
+        
+        if (movies.length === 0) {
+            moviesContainer.innerHTML = '<p class="no-movies">No movies found. Add some to your collection!</p>';
+            return;
+        }
+
+        movies.forEach(movie => {
+            const movieCard = document.createElement('div');
+            movieCard.className = 'movie-card';
+
+   
+
+
 
     });
