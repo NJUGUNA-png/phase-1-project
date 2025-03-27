@@ -1,0 +1,14 @@
+{
+    "movies": [
+      {
+        "id": 1,
+        "title": "The Shawshank Redemption",
+        "director": "Frank Darabont",
+        "year": 1994,
+        "genre": "Drama",
+        "rating": 9.3,
+        "poster": "https://m.media-amazon.com/images/M/MV5BMDFkYTc0MGEtZmNhMC00ZDIzLWFmNTEtODM1ZmRlYWMwMWFmXkEyXkFqcGdeQXVyMTMxODk2OTU@.V1.jpg"
+      }
+      
+    ]
+  }
