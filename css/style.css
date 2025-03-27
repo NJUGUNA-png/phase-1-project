@@ -156,3 +156,26 @@ main{
     font-size: 0.8rem;
     margin-top: 0.5rem;
   }
+
+  .rating {
+    color: #f39c12;
+    font-weight: bold;
+  }
+  
+  .movie-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #eee;
+  }
+  
+  .action-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 0.3rem 0.5rem;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+  }
